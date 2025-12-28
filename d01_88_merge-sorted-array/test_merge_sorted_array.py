@@ -1,6 +1,6 @@
 import pytest
 
-from main import Solution
+from merge_sorted_array import Solution
 
 # helper to easily test both implementations without changing the tests
 pytestmark = pytest.mark.parametrize(
