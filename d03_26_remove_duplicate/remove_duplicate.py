@@ -40,16 +40,16 @@ class Solution:
         """
         Remove all duplicates in nums (in-place). Returns the number of unique elements.
 
-        As the array is already sorted, we can use two "pointers", one for the last unique element, and the other
-        to iterate through the array comparing with the last unique element.
+        As the array is already sorted, we can use just a "pointer" to the latest unique element, then iterate through the array
+        comparing with the latest unique and update the pointer if we have a new unique value.
 
         Time complexity: O(N)
         Space complexity: O(1)
         """
         k = 0
-        for j in range(1, len(nums)):
-            if nums[j] != nums[k]:
+        for value in nums:
+            if value != nums[k]:
                 k += 1
-                nums[k] = nums[j]
+                nums[k] = value
 
         return k + 1
