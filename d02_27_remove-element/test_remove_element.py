@@ -5,7 +5,7 @@ from remove_element import Solution
 # helper to easily test both implementations without changing the tests
 pytestmark = pytest.mark.parametrize(
     "method",
-    [Solution.naiveRemoveElement]#, Solution.naiveRemoveElement]
+    [Solution.naiveRemoveElement, Solution.removeElement]
 )
 
 

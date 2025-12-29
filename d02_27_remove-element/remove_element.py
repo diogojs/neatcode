@@ -35,10 +35,22 @@ class Solution:
     @staticmethod
     def removeElement(nums: list[int], val: int) -> int:
         """
-        Do not return anything, modify nums1 in-place instead.
+        Remove all occurrences of val in nums (in-place)
 
-        Time complexity: O(m+n)
-        Space complexity: O(1)
+        Time complexity: O(N)
+        Space complexity: O(N)
         """
-        return 0
+        target_indexes = []
+        k = 0
+        for i, v in enumerate(nums):
+            if v == val:
+                target_indexes.append(i)
+            else:
+                k += 1
+                if target_indexes:
+                    target_index = target_indexes.pop(0)
+                    nums[target_index] = v
+                    nums[i] = val
+                    target_indexes.append(i)
 
+        return k
